@@ -6,6 +6,7 @@ import org.springframework.web.cors.*;
 import org.springframework.web.filter.CorsFilter;
 import org.springframework.web.servlet.config.annotation.*;
 
+import java.util.Collections;
 import java.util.List;
 
 @Configuration
@@ -26,7 +27,8 @@ public class CorsConfig implements WebMvcConfigurer {
     @Bean
     public CorsFilter corsFilter() {
         CorsConfiguration config = new CorsConfiguration();
-        config.setAllowedOrigins(List.of("http://localhost:5173", "http://127.0.0.1:5173","http://localhost:5174", "http://127.0.0.1:5174"));
+//        config.setAllowedOrigins(List.of("http://localhost:5173", "http://127.0.0.1:5173","http://localhost:5174", "http://127.0.0.1:5174"));
+        config.setAllowedOrigins(Collections.singletonList("https://healthcare-app-ui-ivory.vercel.app"));
         config.setAllowedMethods(List.of("GET","POST","PUT","DELETE","PATCH","OPTIONS"));
         config.setAllowedHeaders(List.of("*"));
         config.setExposedHeaders(List.of("Location"));
