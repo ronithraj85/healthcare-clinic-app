@@ -2,15 +2,26 @@ server:
   port: 8080
 
 
+#spring:
+#  datasource:
+#    url: jdbc:mysql://localhost:3306/healthcare_db
+#    username: root
+#    password: root123
+#  jpa:
+#    hibernate:
+#      ddl-auto: update
+#    open-in-view: false
 spring:
   datasource:
-    url: jdbc:mysql://localhost:3306/healthcare_db
-    username: root
-    password: root123
+    url: jdbc:postgresql://dpg-d5ciuouuk2gs7384hbs0-a:5432/healthcare_db_cwho
+    username: healthcare_db_cwho_user
+    password: SX0dlyP1kMN0MhTfoiquI4m8fMEU7txT
+
   jpa:
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
     hibernate:
       ddl-auto: update
-    open-in-view: false
+
     properties:
       hibernate:
         format_sql: true
