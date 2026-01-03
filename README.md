@@ -20,3 +20,14 @@ This is the backend service for the Healthcare App. It provides secure authentic
 1. Clone the repo:
    ```bash
    git clone https://github.com/your-username/healthcare-api.git
+2. Configure environment variables in application.properties:
+   spring.datasource.url
+   spring.datasource.username
+   spring.datasource.password
+   jwt.secret
+   
+3.  Run the app:   
+   bash
+   ./mvnw spring-boot:run
+   API will be available at http://localhost:8080.
+   
