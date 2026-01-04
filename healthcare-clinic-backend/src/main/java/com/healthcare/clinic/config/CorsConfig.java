@@ -15,8 +15,8 @@ public class CorsConfig implements WebMvcConfigurer {
     @Override
     public void addCorsMappings(CorsRegistry registry) {
         registry.addMapping("/api/**")
-//                .allowedOrigins("http://localhost:3000", "http://127.0.0.1:3000")
-                .allowedOrigins("https://healthcare-app-ui-ivory.vercel.app")
+                .allowedOrigins("http://localhost:3000", "http://127.0.0.1:3000")
+//                .allowedOrigins("https://healthcare-app-ui-ivory.vercel.app")
                 .allowedMethods("GET","POST","PUT","DELETE","PATCH","OPTIONS")
                 .allowedHeaders("*")
                 .exposedHeaders("Location")
@@ -27,8 +27,8 @@ public class CorsConfig implements WebMvcConfigurer {
     @Bean
     public CorsFilter corsFilter() {
         CorsConfiguration config = new CorsConfiguration();
-//        config.setAllowedOrigins(List.of("http://localhost:5173", "http://127.0.0.1:5173","http://localhost:5174", "http://127.0.0.1:5174"));
-        config.setAllowedOrigins(Collections.singletonList("https://healthcare-app-ui-ivory.vercel.app"));
+        config.setAllowedOrigins(List.of("http://localhost:5173", "http://127.0.0.1:5173","http://localhost:5174", "http://127.0.0.1:5174"));
+//        config.setAllowedOrigins(Collections.singletonList("https://healthcare-app-ui-ivory.vercel.app"));
         config.setAllowedMethods(List.of("GET","POST","PUT","DELETE","PATCH","OPTIONS"));
         config.setAllowedHeaders(List.of("*"));
         config.setExposedHeaders(List.of("Location"));
